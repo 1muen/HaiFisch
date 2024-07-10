@@ -1,0 +1,299 @@
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    info.changeScoreBy(1)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    otherSprite.destroy()
+    info.changeLifeBy(-1)
+})
+let projectile: Sprite = null
+let projectile2: Sprite = null
+let mySprite = sprites.create(assets.image`Mama`, SpriteKind.Player)
+controller.moveSprite(mySprite, 100, 100)
+mySprite.setStayInScreen(true)
+scene.setBackgroundImage(assets.image`Freeway`)
+scroller.scrollBackgroundWithSpeed(-50, 0)
+animation.runImageAnimation(
+mySprite,
+[img`
+    ..............fffcc.............
+    ..............fcbddcc...........
+    ...............fbbddcc..........
+    ...............fcbbccf..........
+    ..ccc.........ffccccccfffff.....
+    ..cbbcc....fffcbbbbcbbbbbbbff...
+    ...cbbdc.ffcccbbbbcbcbbbbbbbbf..
+    ...fbbdcfcccccbbbcbcbbffbbbbbbff
+    ....fbbffcccccbbbbbcb1ff11bbbcbf
+    ....fcbbcccccccbbbbb11111111bbbf
+    ....fcccccccccccbbbb11cc33111bf.
+    ...fcbbffbdbcccccbbb111c13cccf..
+    ...fbbf..ccddddcfbbbc111c31cf...
+    ..fbbf.....ccdccbbdbf111cccf....
+    ..fff........ccbbdcfcccc........
+    ..............fffff.............
+    `,img`
+    ..............fffcc.............
+    ..............fbbddc............
+    ...............fbbddc...........
+    ccc............fcbbccf..........
+    cbbcc.........ffccccccffffff....
+    .cbbdc.....fffcbbbbbbbbbbbbbff..
+    .fbbddc..ffcccbbbbcbcbbbbbbbbbff
+    ..fbbdfffcccccbbbcbcbbffbbbbbcbf
+    ..fcbbbcccccccbbbcbcb1ff1111bbbf
+    ..fccbcccccccccbbbbbb11111111bf.
+    .fcbbfffccccccccbbbb11cc33cccf..
+    .fbbf...cbdbcccccbbb111c131cf...
+    fbbf.....ccdddddfbbbc111c33f....
+    fff........ccddfbbdbf1111ff.....
+    .............cfbbdbfccccc.......
+    ..............fffff.............
+    `,img`
+    ..............fffc..............
+    ..............fbddcc............
+    ..ccc.........ffbddbc...........
+    ..cbbc.........fcbbccf..........
+    ...cbdc.......ffccccccfffffff...
+    ...fbdc....fffcbbbbbbbbbbbbbcff.
+    ....fbdc.ffcccbbbbbbcbbbbbbbbbcf
+    ....fcdffcccccbbbcbcbbbffbbbbcbf
+    ....fcbbccccccbbbcbcbbbff1111bbf
+    ...fcbbccccccccbbbcbb11111111bf.
+    ...fbbfffcccccccbbbb11bc33cccf..
+    ..fbbf..cbdbcccccbbb111c131cf...
+    ..fff....cbdddddccbbc111c33f....
+    ..........ccbddccbbdf1111ff.....
+    ............ccfbbbdfccccc.......
+    ..............fffff.............
+    `,img`
+    ..............fffcc.............
+    ..............fbbddc............
+    ...............fbbddc...........
+    ccc............fcbbccf..........
+    cbbcc.........ffccccccffffff....
+    .cbbdc.....fffcbbbbbbbbbbbbbff..
+    .fbbddc..ffcccbbbbcbcbbbbbbbbbff
+    ..fbbdfffcccccbbbcbcbbffbbbbbcbf
+    ..fcbbbcccccccbbbcbcb1ff1111bbbf
+    ..fccbcccccccccbbbbbb11111111bf.
+    .fcbbfffccccccccbbbb11cc33cccf..
+    .fbbf...cbdbcccccbbb111c131cf...
+    fbbf.....ccdddddfbbbc111c33f....
+    fff........ccddfbbdbf1111ff.....
+    .............cfbbdbfccccc.......
+    ..............fffff.............
+    `],
+500,
+true
+)
+forever(function () {
+    projectile2 = sprites.createProjectileFromSide(img`
+        ....ffffff.........ccc..
+        ....ff22ccf.......cc4f..
+        .....ffccccfff...cc44f..
+        ....cc24442222cccc442f..
+        ...c9b4422222222cc422f..
+        ..c999b2222222222222fc..
+        .c2b99111b222222222c22c.
+        c222b111992222ccccccc22f
+        f222222222222c222ccfffff
+        .f2222222222442222f.....
+        ..ff2222222cf442222f....
+        ....ffffffffff442222c...
+        .........f2cfffc2222c...
+        .........fcc2ffffffff...
+        ..........fc2ffff.......
+        ...........fffff........
+        `, -90, 0)
+    projectile2.y = randint(15, 115)
+    projectile2.setKind(SpriteKind.Enemy)
+    pause(1000)
+    animation.runImageAnimation(
+    projectile2,
+    [img`
+        ....ffffff.........ccc..
+        ....ff22ccf.......cc4f..
+        .....ffccccfff...cc44f..
+        ....cc24442222cccc442f..
+        ...c9b4422222222cc422f..
+        ..c999b2222222222222fc..
+        .c2b99111b222222222c22c.
+        c222b111992222ccccccc22f
+        f222222222222c222ccfffff
+        .f2222222222442222f.....
+        ..ff2222222cf442222f....
+        ....ffffffffff442222c...
+        .........f2cfffc2222c...
+        .........fcc2ffffffff...
+        ..........fc2ffff.......
+        ...........fffff........
+        `,img`
+        ....ffffff.........ccc..
+        ....ff22ccf.......cc4f..
+        .....ffccccfff...cc44f..
+        ....cc24442222cccc442f..
+        ...c9b4422222222cc422f..
+        ..c9999b222222222222fc..
+        .c2b991119222222222c22c.
+        c2222b11992222ccccccc22f
+        f222222222222c222ccfffff
+        .f2222222222444222f.....
+        ..ff2222222cf444222f....
+        ....ffffffffff444222c...
+        .........f2cfffc2222c...
+        .........fcc2ffffffff...
+        ..........fc2ffff.......
+        ...........fffff........
+        `,img`
+        ...ffffff..........ccc..
+        ...ff22ccff.......c44f..
+        ....fffccccfff...c442f..
+        ....cc24442222ccc4422f..
+        ...c99b222222222cc22fc..
+        ..c999111b222222222222c.
+        .c2bb11199222ccccccc222f
+        c22222222222c222cccfffff
+        f22222222222442222ccc...
+        .f222222222224442222c...
+        ..ff2222222cffc44222c...
+        ....fffffffcffffcccc....
+        .........f2c2ffff.......
+        .........fcc2ffff.......
+        ..........ffffff........
+        ........................
+        `,img`
+        ...fffffff.........ccc..
+        ...ff22ccff.......cc4f..
+        ....fffccccfff...cc44f..
+        ....cc24442222cccc442f..
+        ...c9b4422222222cc422f..
+        ..c999b2222222222222fc..
+        .c2b99111b222222222c22c.
+        c222b111992222ccccccc22f
+        f222222222222c222ccfffff
+        .f2222222222442222f.....
+        ..ff2222222cf442222f....
+        ....ffffffffff442222c...
+        .........f2cfffc2222c...
+        .........fcc2ffffffff...
+        ..........fc2ffff.......
+        ...........fffff........
+        `,img`
+        ....ffffff..............
+        ....ff22ccf.........cf..
+        .....ffccccfff.....c4f..
+        ....cc22222222ccccc44f..
+        ...c9b244422222ccc442f..
+        ..c99944222222222242fc..
+        .c2b9992222222222222fcc.
+        c222b1111b22222222cc22cf
+        f2222211992222ccccccc22f
+        .f22222222222c222cffffff
+        ..ff2222222c442222ff....
+        ....fffffffff442222fc...
+        .........f2cff442222c...
+        .........fccfffc2222c...
+        ..........fc2ffffffff...
+        ...........c2fff........
+        `,img`
+        ....ffffff..............
+        ....ff2cccf.........cf..
+        .....ff2cccfff.....c4f..
+        ....cc22222222ccccc44f..
+        ...c9b244422222ccc442f..
+        ..c99944222222222242fc..
+        .c2b9912222222222222fcc.
+        c222b1111b22222222cc22cf
+        f2222221992222ccccccc22f
+        .f22222222222c222cffffff
+        ..ff2222222c442222ff....
+        ....fffffffff442222fc...
+        .........f2cff442222c...
+        .........fccfffc2222c...
+        ..........fc2ffffffff...
+        ...........c2fff........
+        `],
+    500,
+    true
+    )
+})
+forever(function () {
+    projectile = sprites.createProjectileFromSide(assets.image`Baby`, -90, 0)
+    projectile.y = randint(15, 115)
+    pause(1000)
+    animation.runImageAnimation(
+    projectile,
+    [img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . c c c c c c . . . 
+        . . . . . . c 5 5 5 5 5 c c . . 
+        . . . . . c 5 5 5 5 5 5 5 5 c . 
+        . . . . c b b b b b b 5 5 5 c . 
+        . . . . c b b b b 1 b b c c . . 
+        . . . . c 1 1 b b 1 1 1 c . . . 
+        . . . c 1 1 1 1 b 1 1 1 c . . . 
+        . . . c 1 1 1 1 b 1 1 1 b b c c 
+        . . c c d 1 1 1 b 1 b 1 5 5 5 c 
+        . . c c d 1 c 1 1 1 b 1 b b 5 c 
+        . c c d d 1 1 1 1 1 b 1 f b 5 c 
+        f d d d 1 1 1 1 1 b b b f . c c 
+        f f f f f 1 1 1 b b 5 5 5 f . . 
+        . . . . . f f f 5 5 5 5 5 f . . 
+        . . . . . . . . f f f f f f . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . c c c c c . . . 
+        . . . . . . c c 5 5 5 5 5 c . . 
+        . . . . . c 5 5 5 5 5 5 5 5 c . 
+        . . . . c b b b b b b 5 5 5 c . 
+        . . . . c 1 1 b b 1 b b c c . . 
+        . . . c 1 1 1 b b 1 1 1 c . . . 
+        . . . c 1 1 1 1 b 1 1 1 c . c c 
+        . . . c d 1 1 1 b 1 1 1 b b 5 c 
+        . . c c d 1 c 1 b 1 b 1 5 5 5 c 
+        . c c d d 1 1 1 1 1 b 1 b b 5 c 
+        f d d d 1 1 1 1 1 b b 1 f . c c 
+        f f f 1 1 1 1 1 1 b b b f . . . 
+        . . . f f 1 1 1 b b b 5 5 f . . 
+        . . . . . f f f 5 5 5 5 5 f . . 
+        . . . . . . . . f f f f f f . . 
+        `,img`
+        . . . . . . . . . c c c c c . . 
+        . . . . . . c c c 5 5 5 5 c c . 
+        . . . . c c 5 5 5 5 5 5 5 5 c . 
+        . . . . c b b b b b b 5 5 5 c . 
+        . . . c 1 1 1 b b 1 b b c c . . 
+        . . . c 1 1 1 1 b 1 1 1 c . c c 
+        . . . c d 1 1 1 b 1 1 1 c b 5 c 
+        . . c c d 1 c 1 b 1 1 1 b b 5 c 
+        c c c d d 1 1 1 b 1 b 1 5 5 5 c 
+        f d d d 1 1 1 1 1 1 b 1 b b c c 
+        . f f 1 1 1 1 1 1 b b 1 f . . . 
+        . . . f 1 1 1 1 1 b b b f . . . 
+        . . . . f f 1 1 b b 5 5 f . . . 
+        . . . . . . f 5 5 5 5 5 f . . . 
+        . . . . . . . f f f f f f . . . 
+        . . . . . . . . . . . . . . . . 
+        `,img`
+        . . . . . . . . c c c c c . . . 
+        . . . . . . c c 5 5 5 5 5 c . . 
+        . . . . . c 5 5 5 5 5 5 5 5 c . 
+        . . . . c b b b b b b 5 5 5 c . 
+        . . . . c 1 1 b b 1 b b c c . . 
+        . . . c 1 1 1 b b 1 1 1 c . . . 
+        . . . c 1 1 1 1 b 1 1 1 c . c c 
+        . . . c d 1 1 1 b 1 1 1 b b 5 c 
+        . . c c d 1 c 1 b 1 b 1 5 5 5 c 
+        . c c d d 1 1 1 1 1 b 1 b b 5 c 
+        f d d d 1 1 1 1 1 b b 1 f . c c 
+        f f f 1 1 1 1 1 1 b b b f . . . 
+        . . . f f 1 1 1 b b b 5 5 f . . 
+        . . . . . f f f 5 5 5 5 5 f . . 
+        . . . . . . . . f f f f f f . . 
+        . . . . . . . . . . . . . . . . 
+        `],
+    500,
+    true
+    )
+})
