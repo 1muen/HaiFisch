@@ -1,3 +1,5 @@
+Die Projekte sind während eines kleinen Workshops entstanden, den ich gehalten habe, für Kindern während der Sommerferien
+
 https://makecode.com/_HP9dbVecsat4
 
 https://makecode.com/_i2VRcF4MbA3w
