@@ -11,3 +11,20 @@ Ich füge das dann nach dem Tag heute hier ein und ihr könnt das immer unter <i
 
 bzw 
 https://github.com/1muen/HaiFisch aufrufen.
+
+
+
+
+edda&greta: https://makecode.com/_LDDALtggYCkf
+SEM https://makecode.com/_XcLD6FMmCJmp
+
+T  https://makecode.com/_U7TLPDgicAz5
+
+
+logi https://makecode.com/_gT50aY7zvYrv
+
+
+
+
+
+
