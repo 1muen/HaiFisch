@@ -5,3 +5,9 @@ https://arcade.makecode.com/S15358-94682-21937-95324
 Klickt oben rechts auf teilen
 <img width="77" height="60" alt="image" src="https://github.com/user-attachments/assets/02bdb207-6d8b-4e26-9d1d-311a4652cd02" />
 und fügt den Link hier ein zusammen mit eurem Teamnamen: https://yopad.eu/p/Haie
+Dann können wir gleich eure Spiele präsentieren
+
+Ich füge das dann nach dem Tag heute hier ein und ihr könnt das immer unter <img width="58" height="58" alt="qr_code_2025-08-07_12-28-45_UTC" src="https://github.com/user-attachments/assets/b6b5f00c-b63d-4239-bb69-b964b0f2653a" />
+
+bzw 
+https://github.com/1muen/HaiFisch aufrufen.
