@@ -6,7 +6,7 @@ Die Projekte sind während eines kleinen Workshops entstanden, den ich gehalten 
  
 johann und anton https://makecode.com/_dY03aadEcTxJ
 
-https://makecode.com/_AvzFaLfgYEjA(Aleks)
+https://makecode.com/_AvzFaLfgYEjA (Aleks)
 
 Linus,Thilo https://makecode.com/_L1FFud7JAKjk 
 
