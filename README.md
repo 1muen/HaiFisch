@@ -2,10 +2,12 @@ Die Projekte sind während eines kleinen Workshops entstanden, den ich gehalten 
 
 # 2026
 
-Eurren Namen + LInk zum Spiel
  matti https://makecode.com/_WPx0C4fHAa1gi
+ 
 johann und anton https://makecode.com/_dY03aadEcTxJ
-https://makecode.com/_AvzFaLfgYEjA(Aleks(gehackte version)
+
+https://makecode.com/_AvzFaLfgYEjA(Aleks)
+
 Linus,Thilo https://makecode.com/_L1FFud7JAKjk 
 
 # 2025
