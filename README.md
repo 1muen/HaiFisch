@@ -2,7 +2,11 @@ Die Projekte sind während eines kleinen Workshops entstanden, den ich gehalten 
 
 # 2026
 
-https://yopad.eu/p/Haie-1day
+Eurren Namen + LInk zum Spiel
+ matti https://makecode.com/_WPx0C4fHAa1gi
+johann und anton https://makecode.com/_dY03aadEcTxJ
+https://makecode.com/_AvzFaLfgYEjA(Aleks(gehackte version)
+Linus,Thilo https://makecode.com/_L1FFud7JAKjk 
 
 # 2025
 
@@ -29,6 +33,10 @@ https://arcade.makecode.com/11538-66277-80636-73179
 Basis Spiel:
 
 https://arcade.makecode.com/S15358-94682-21937-95324
+
+Linus https://makecode.com/_38YULqRgmTAV
+
+
 
 Zum Teilen des Spiels:
 Klickt oben rechts auf teilen
