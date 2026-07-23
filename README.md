@@ -1,4 +1,9 @@
 Die Projekte sind während eines kleinen Workshops entstanden, den ich gehalten habe, für Kindern während der Sommerferien
+
+# 2026
+
+https://yopad.eu/p/Haie-1day
+
 # 2025
 
 edda&greta: https://makecode.com/_LDDALtggYCkf
